@@ -3,6 +3,7 @@ const { MongoClient } = require("mongodb");
 class Mongo {
   constructor() {
     const url = process.env.MONGO_URI;
+
     this.client = new MongoClient(url, {
       useNewUrlParser: true,
       useUnifiedTopology: true,

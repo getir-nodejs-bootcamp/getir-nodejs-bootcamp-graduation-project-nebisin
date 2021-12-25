@@ -1,9 +1,6 @@
+require("dotenv").config();
 const mongo = require("./mongo");
 
-async function loadMongoDB() {
+module.exports = async () => {
   await mongo.init();
-}
-
-module.exports = () => {
-  loadMongoDB();
 };
