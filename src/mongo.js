@@ -9,14 +9,15 @@ class Mongo {
     });
   }
   async init() {
-    await this.client.connect();
-    console.log("Connected to MongoDB");
+    try {
+      await this.client.connect();
+      console.log("Connected to MongoDB");
 
-    this.db = this.client.db(process.env.MONGO_DB);
-    this.Records = this.db.collection("records");
-  }
-  async close() {
-    await this.client.close();
+      this.db = this.client.db(process.env.MONGO_DB);
+      this.Records = this.db.collection("records");
+    } catch (error) {
+      console.error(error);
+    }
   }
 }
 

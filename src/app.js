@@ -4,7 +4,7 @@ require("./loader")();
 const express = require("express");
 
 const { listRecordsController } = require("./controller");
-const { validate, errorHandler } = require("./middleware");
+const { validate, errorHandler } = require("./middlewares");
 const { listRecordsSchema } = require("./model");
 
 const port = process.env.PORT || 3000;

@@ -8,7 +8,7 @@ module.exports.validate = (schema) => (req, res, next) => {
     });
     return res.send({ code: 400, msg: "Validation failed", errors });
   }
-  req.body = value;
+  Object.assign(req, { data: value });
   return next();
 };
 
