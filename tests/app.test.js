@@ -4,7 +4,7 @@ const app = require("../src/app");
 jest.mock("../src/mongo");
 
 describe("POST /", () => {
-  it("should return array of records", async () => {
+  it("success case", async () => {
     const data = {
       startDate: new Date("2016-01-26"),
       endDate: new Date("2018-02-02"),

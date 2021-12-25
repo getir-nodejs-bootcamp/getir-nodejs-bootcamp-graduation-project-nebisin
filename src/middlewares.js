@@ -27,3 +27,7 @@ module.exports.errorHandler = (err, req, res, next) => {
 
   res.send({ code: statusCode, msg: message });
 };
+
+module.exports.notFoundHandler = (req, res, next) => {
+  res.send({ code: 404, msg: "Not found" });
+};
