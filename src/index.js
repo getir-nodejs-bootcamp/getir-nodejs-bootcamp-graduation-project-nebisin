@@ -1,8 +1,10 @@
-const run = require("./app");
+require("dotenv").config();
+const app = require("./app");
+const loader = require("./loader");
 
 const port = process.env.PORT || 3000;
 
-run().then((app) => {
+loader().then(() => {
   app.listen(port, () => {
     console.log(`Listening on port ${port}`);
   });

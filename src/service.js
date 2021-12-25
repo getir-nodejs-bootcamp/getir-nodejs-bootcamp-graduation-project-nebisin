@@ -32,20 +32,21 @@ module.exports.listRecordsService = (data) => {
       },
     };
 
-    mongo.Records.aggregate([projectStage, matchStage]).toArray((err, docs) => {
-      if (err) {
-        return reject(err);
-      }
+    mongo
+      .listRecords(projectStage, matchStage)
+      .then((docs) => {
+        const records = docs.map((doc) => {
+          return {
+            key: doc.key,
+            totalCount: doc.totalCount,
+            createdAt: doc.createdAt,
+          };
+        });
 
-      const records = docs.map((doc) => {
-        return {
-          key: doc.key,
-          totalCount: doc.totalCount,
-          createdAt: doc.createdAt,
-        };
+        resolve(records);
+      })
+      .catch((err) => {
+        reject(err);
       });
-
-      resolve(records);
-    });
   });
 };

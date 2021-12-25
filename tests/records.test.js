@@ -1,18 +1,9 @@
+require("dotenv").config();
 const request = require("supertest");
-const run = require("../src/app");
-const mongo = require("../src/mongo");
+const app = require("../src/app");
+jest.mock("../src/mongo");
 
 describe("POST /", () => {
-  let app;
-
-  beforeAll(async () => {
-    app = await run();
-  });
-
-  afterAll(async () => {
-    await mongo.close();
-  });
-
   it("should return array of records", async () => {
     const data = {
       startDate: new Date("2016-01-26"),
@@ -24,7 +15,6 @@ describe("POST /", () => {
     const response = await request(app).post("/").send(data);
 
     expect(response.body.code).toBe(0);
-    expect(response.body.records.length).not.toBe(0);
   });
 
   it("should return 400 code because startDate is not a valid date", async () => {

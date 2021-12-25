@@ -23,6 +23,18 @@ class Mongo {
   async close() {
     await this.client.close();
   }
+  async listRecords(projectStage, matchStage) {
+    try {
+      const docs = await this.Records.aggregate([
+        projectStage,
+        matchStage,
+      ]).toArray();
+
+      return docs;
+    } catch (error) {
+      throw error;
+    }
+  }
 }
 
 module.exports = new Mongo();
