@@ -19,6 +19,9 @@ class Mongo {
       console.error(error);
     }
   }
+  async close() {
+    await this.client.close();
+  }
 }
 
 module.exports = new Mongo();
