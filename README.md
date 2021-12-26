@@ -5,7 +5,7 @@ This is the final project of the Node.js Bootcamp organized by Patika.dev and Ge
 ## Live Project
 
 ```
-https://getir-graduation-project.herokuapp.com
+https://frozen-ravine-05853.herokuapp.com/
 ```
 
 ## Installation
