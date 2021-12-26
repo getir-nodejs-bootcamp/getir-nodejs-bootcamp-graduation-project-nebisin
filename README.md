@@ -1,26 +1,97 @@
-# Getir Node.js Bootcamp Graduation Project
-## The Challenge
-We’d like you to create a RESTful API with a single endpoint that fetches the data in the provided MongoDB collection and return the results in the requested format.
-Requirements
-- The code should be written in Node.js using express framework
-- The endpoint should just handle HTTP POST requests.
-- The application should be deployed on AWS or Heroku. You don’t need to use any API Gateway, Load Balancers or any other layer than the developed application.
-- The up to date repo should be publicly available in Github, Bitbucket or equivalent.
+# Getir Node.js Bootcamp Graduation Project - Salim Bozok
 
-## Deliverables
-- The public repo URL which has the source code of the project, and a set of instructions if there is any project specific configurations needed to run the project.
-- The public endpoint URL of the deployed API which is available for testing.
+This is the final project of the Node.js Bootcamp organized by Patika.dev and Getir.
 
-## Worth Highlighting
-We expect these requirements can be delivered in 3 to 6 hours. However, it is not a speed test. Take your time! Your feedback on how much actual time you were needed to deliver the task will be very helpful but will not be used for the evaluation.
-You are free to use any libraries to deliver the needed functionality, but be prepared to explain other solutions that you would have implemented if you have more time.
+## Live Project
 
-## Crucial Points
-- Delivering a Working RESTful API.
-- Clean and Production Ready Code
-- Error Handling
-- Comments and Documentation
-- Unit and/or Integration Tests (Jest is preferable but Mocha also works)
-- Avoid Over Engineering
+```
+https://getir-graduation-project.herokuapp.com
+```
 
-Good luck with this assignment! Try to make good use of this task to demonstrate and show off your coding skills. If you have any questions, don’t hesitate to ask your contact person within Getir.
+## Installation
+
+Download the source codes to your computer.
+
+```
+git clone https://github.com/getir-nodejs-bootcamp/getir-nodejs-bootcamp-graduation-project-nebisin.git
+```
+
+## Configuration
+
+1. Go to the project directory
+
+```
+cd getir-nodejs-bootcamp-graduation-project-nebisin
+```
+
+2. Create .env file in the main directory and edit it as the following example
+
+```
+PORT=3000
+MONGO_URI=mongodb+srv://challengeUser:WUMglwNBaydH8Yvu@challenge-xzwqd.mongodb.net
+MONGO_DB=getir-case-study
+```
+
+3. Install npm packages
+
+```
+npm install
+```
+
+## Running the application
+
+```
+npm run start
+```
+
+_You can run the tests with the following command:_
+
+```
+npm test
+```
+
+## Usage
+
+- API has a single endpoint and only accepts POST requests.
+
+```
+POST /
+Host: localhost:3000
+Content-Type: application/json
+```
+
+- The request body must include a JSON with 4 fields.
+
+```
+{
+    "startDate": "2016-01-26",
+    "endDate": "2018-02-02",
+    "minCount": 2700,
+    "maxCount": 3000
+}
+```
+
+- Response payload will have 3 main fields.
+
+```
+{
+    "code": 0,
+    "msg": "Success",
+    "records": [
+        {
+            "key": "ibfRLaFT",
+            "totalCount": 2892,
+            "createdAt": "2016-12-25T16:43:27.909Z"
+        },
+        {
+            "key": "pxClAvll",
+            "totalCount": 2772,
+            "createdAt": "2016-12-19T10:00:40.050Z"
+        }
+    ]
+}
+```
+
+<br>
+
+**Contact**: Salim Bozok ([GitHub](https://github.com/nebisin) - [Linkedin](https://www.linkedin.com/in/salimbozok/) - <salimbozok@outlook.com>)
